@@ -1,0 +1,23 @@
+This document contains the various files and outputs of the two capstone projects
+
+Files included:
+
+A) Problem Statement: Deploying Javascript microservice using NodeJs
+
+    1.) Jenkins CI,CD pipeline script for deployment
+    2.) outputs
+    3.) Docker File
+    4.) Kebernetes script
+    5.) Grafana monitoring outputs
+    6.) AWS EC2 script
+    7.) AWS Cloud Watch monitoring outputs
+
+B) Problem Statement: Deploying Springboot project
+
+    1.) Jenkins CI,CD pipeline script for deployment
+    2.) outputs
+    3.) Docker File
+    4.) Kebernetes script
+    5.) Grafana monitoring outputs
+    6.) AWS EC2 script
+    7.) AWS Cloud Watch monitoring outputs
