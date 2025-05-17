@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('GIT import') {
+            steps {
+                git branch: 'main', credentialsId: 'githubanuragsroy', url: 'https://github.com/anuragsroy/project_nodejs.git'
+            }
+        }
+         stage('build docker image') {
+            steps {
+                bat 'docker build -t myproject-nodeimage-image10 .'
+            }
+        }
+          stage('deploy application on docker container') {
+            steps {
+                bat 'docker run -t -dp 9596:9596 --name=projecttest10 myproject-nodeimage-image10'
+            }
+        }
+    }
+}
