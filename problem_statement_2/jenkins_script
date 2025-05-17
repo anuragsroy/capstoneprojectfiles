@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('GIT import') {
+            steps {
+                git branch: 'main', credentialsId: 'githubanuragsroy', url: 'https://github.com/anuragsroy/maven-capstone.git'
+            }
+        }
+		stage('test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+		stage('jar file') {
+            steps {
+                bat 'mvn package'
+            }
+        }
+         stage('build docker image') {
+            steps {
+                bat 'docker build -t myproject-springbootimage-image1 .'
+            }
+        }
+          stage('deploy application on docker container') {
+            steps {
+                bat 'docker run -t -dp 8786:8786 --name=springbootproject1 myproject-springbootimage-image1'
+            }
+        }
+    }
+}
